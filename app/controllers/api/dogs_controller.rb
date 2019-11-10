@@ -29,4 +29,10 @@ class Api::DogsController < ApplicationController
     @dog.save
     render 'show.json.jb'
   end
+
+  def destroy
+    @dog = Dog.find_by(id: params[:id])
+    @dog.destroy
+    render 'destroy.json.jb'
+  end
 end
